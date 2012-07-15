@@ -1,0 +1,36 @@
+{
+    "name": "openpsa/openpsa-project-template",
+    "repositories": [
+        {
+            "type": "pear",
+            "url": "http://pear.php.net"
+        },
+        {
+            "type": "pear",
+            "url": "htmlpurifier.org"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/flack/openpsa"
+        }
+    ],
+    "require": {
+        "openpsa/midcom": "dev-master"
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "openpsa\\setup\\installer::install_statics",
+            "openpsa\\setup\\installer::install_schemas"
+        ],
+        "post-update-cmd": [
+            "openpsa\\setup\\installer::install_statics",
+            "openpsa\\setup\\installer::install_schemas"
+        ]
+    },
+    "extra": {
+        "midcom-static-dir": "midcom-static"
+    },
+    "autoload": {
+        "psr-0": { "": "lib/" }
+    }
+}

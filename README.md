@@ -1,4 +1,4 @@
 openpsa-project-template
 ========================
 
-Template for setting up OpenPSA-based projects
+(Experimental) Template for setting up OpenPSA-based projects.
