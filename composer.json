@@ -19,6 +19,7 @@
     },
     "scripts": {
         "post-install-cmd": [
+            "openpsa\\setup\\installer::setup_project",
             "openpsa\\setup\\installer::install_statics",
             "openpsa\\setup\\installer::install_schemas"
         ],
@@ -31,6 +32,6 @@
         "midcom-static-dir": "midcom-static"
     },
     "autoload": {
-        "psr-0": { "": "lib/" }
+        "psr-0": { "": "src/" }
     }
 }
