@@ -16,7 +16,7 @@ include $basedir . 'config.inc.php';
 // Include the MidCOM environment
 require MIDCOM_ROOT . '/midcom.php';
 
-$loader = require '../vendor/autoload.php';
+$loader = require $basedir . 'vendor/autoload.php';
 $loader->register();
 
 // Insert custom setup (out-of-tree components and such) here
