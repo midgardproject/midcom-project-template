@@ -1,4 +1,4 @@
-openpsa-project-template
+midcom-project-template
 ========================
 
-(Experimental) Template for setting up OpenPSA-based projects.
+(Experimental) Template for setting up MidCOM-based projects.
