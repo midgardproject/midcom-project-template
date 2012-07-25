@@ -1,5 +1,5 @@
 {
-    "name": "openpsa/openpsa-project-template",
+    "name": "openpsa/midcom-project-template",
     "repositories": [
         {
             "type": "pear",
