@@ -18,7 +18,7 @@ Vagrant::Config.run do |config|
   # network interface) by any external networks.
   config.vm.network :hostonly, "192.168.33.10"
 
-  config.ssh.timeout = 30000
+  config.ssh.timeout = 30000000
 
   Vagrant::Config.run do |config|
     config.vm.share_folder("midcom", "/midcom", "..", :nfs => true)
