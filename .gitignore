@@ -2,3 +2,4 @@ vendor
 web/midcom-static
 installer
 composer.phar
+vagrant/.vagrant

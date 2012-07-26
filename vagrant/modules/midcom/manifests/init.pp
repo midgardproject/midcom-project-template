@@ -67,7 +67,7 @@ class midcom {
   }
 
   # MySQL setup
-  package { ['mysql-server', 'mysql']:
+  package { ['mysql-server', 'mysql-client']:
     ensure => latest
   }
 
