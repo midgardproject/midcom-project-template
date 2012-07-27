@@ -8,7 +8,7 @@ class midcom {
   $dbname = 'midgard'
 
   # The PHP and Apache environment with Midgard2
-  package { ['php5-cli', 'php5-midgard2', 'apache2', 'libapache2-mod-php5']:
+  package { ['php5-cli', 'php5-midgard2', 'apache2', 'libapache2-mod-php5', 'libgda-4.0-mysql']:
       ensure => latest;
   }
 
@@ -53,7 +53,7 @@ class midcom {
   }
 
   # Set up vhost
-  file { '/etc/apache2/sites-enabled/midcom.lo':
+  file { '/etc/apache2/sites-available/midcom.lo':
     source => 'puppet:///modules/midcom/midcom.lo',
     require => Package['apache2'],
     notify => Service['apache2']
@@ -65,6 +65,18 @@ class midcom {
     hasrestart => true,
     hasstatus => true,
     require => Package['apache2']
+  }
+
+  # Enable mod_rewrite
+  exec { '/usr/sbin/a2enmod rewrite':
+    require => Package['apache2'],
+    notify => Service['apache2']
+  }
+
+  # Enable vhost
+  exec { '/usr/sbin/a2ensite midcom.lo':
+    require => Package['apache2'],
+    notify => Service['apache2']
   }
 
   # MySQL setup
@@ -87,6 +99,16 @@ class midcom {
   # Set up Midgard2 config
   file { "${project_path}/config/midgard2.ini":
     source => 'puppet:///modules/midcom/midgard2.ini',
+    require => Package['php5-midgard2']
+  }
+
+  # Copy Midgard2 schema dir
+  file { "${project_path}/config/share":
+    owner => 'vagrant',
+    group => 'vagrant',
+    ensure => directory,
+    recurse => true,
+    source => '/usr/share/midgard2',
     require => Package['php5-midgard2']
   }
 }
