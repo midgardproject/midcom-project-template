@@ -18,7 +18,7 @@ if (file_exists($basedir . 'config.inc.php'))
 else
 {
     include $basedir . 'tools/bootstrap.php';
-    $bootstrapper = new bootstrapper($basedir);
+    $bootstrapper = new bootstrap($basedir);
     $bootstrapper->run();
 }
 
