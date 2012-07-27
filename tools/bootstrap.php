@@ -62,6 +62,7 @@ class bootstrap
         $config .= "\$GLOBALS['midcom_config_local']['midcom_services_rcs_root'] = '{$this->get_rcs_root()}';\n";
         $config .= "\$GLOBALS['midcom_config_local']['cache_base_directory'] = '{$this->get_cache_root()}';\n";
         $config .= "\$GLOBALS['midcom_config_local']['log_filename'] = '{$this->get_log_file()}';\n";
+        $config .= "\$GLOBALS['midcom_config_local']['theme'] = 'midcom-bootstrap';\n";
         $config .= '?>';
 
         if (is_writable($this->_basedir))
