@@ -3,3 +3,7 @@ web/midcom-static
 installer
 composer.phar
 setup/vagrant/.vagrant
+var/logs/
+var/rcs/
+var/blobs/
+var/cache/
