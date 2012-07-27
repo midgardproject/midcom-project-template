@@ -11,14 +11,14 @@ $GLOBALS['midcom_config_local'] = array();
 $GLOBALS['midcom_config_local']['person_class'] = 'openpsa_person';
 
 //This file you have to provide
-if (file_exists($basedir . 'config.inc.php'))
+if (file_exists($basedir . 'config/midcom.inc.php'))
 {
-    include $basedir . 'config.inc.php';
+    include $basedir . 'config/midcom.inc.php';
 }
 else
 {
     include $basedir . 'tools/bootstrap.php';
-    $bootstrapper = new bootstrapper($basedir);
+    $bootstrapper = new bootstrap($basedir);
     $bootstrapper->run();
 }
 
