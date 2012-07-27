@@ -41,7 +41,7 @@ To set up a Vagrant project, download this project template, and then:
 
 The `up` command will download a Ubuntu 12.04 base image, start it in [VirtualBox](https://www.virtualbox.org/) and then use the [Puppet](http://puppetlabs.com/) configuration management system to set up Midgard2, PHP, Apache, and your MidCOM project.
 
-This setup can take a long time depending on your internet connection. Once it is done, there should be a MidCOM instance running based on your project setup.
+This setup can take a long time depending on your internet connection. Once it is done, there should be a MidCOM instance running based on your project setup. You can access it at <http://localhost:8181>.
 
 ### Usage
 
