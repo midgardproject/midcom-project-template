@@ -11,9 +11,9 @@ $GLOBALS['midcom_config_local'] = array();
 $GLOBALS['midcom_config_local']['person_class'] = 'openpsa_person';
 
 //This file you have to provide
-if (file_exists($basedir . 'config.inc.php'))
+if (file_exists($basedir . 'config/midcom.inc.php'))
 {
-    include $basedir . 'config.inc.php';
+    include $basedir . 'config/midcom.inc.php';
 }
 else
 {

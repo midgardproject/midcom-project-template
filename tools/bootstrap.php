@@ -66,7 +66,7 @@ class bootstrap
 
         if (is_writable($this->_basedir))
         {
-            file_put_contents($this->_basedir . 'config.inc.php', $config);
+            file_put_contents($this->_basedir . 'config/midcom.inc.php', $config);
         }
         else
         {
