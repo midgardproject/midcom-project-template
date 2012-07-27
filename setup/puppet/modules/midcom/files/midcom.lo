@@ -1,0 +1,16 @@
+<VirtualHost *:80>
+  ServerName midcom.lo
+
+  DocumentRoot /midcom/web
+
+  AddDefaultCharset utf8
+
+  php_admin_value midgard.http = 'On'
+  php_admin_value midgard.engine = 'On'
+  php_admin_value midgard.configuration_file = '/midcom/config/midgard2.conf'
+
+  <Directory /midcom/web>
+    Options FollowSymLinks
+    AllowOverride All
+  </Directory>
+</VirtualHost>

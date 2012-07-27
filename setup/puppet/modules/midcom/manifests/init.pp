@@ -1,6 +1,7 @@
 class midcom {
   $home_path = '/home/vagrant'
   $bin_dir = '/usr/local/bin'
+  $project_path = '/midcom'
 
   $dbuser = 'midgard'
   $dbpass = 'midgard'
@@ -13,7 +14,7 @@ class midcom {
 
   # SSH should go straight to project root
   file { "${home_path}/.bash_aliases":
-      content => 'cd /midcom';
+      content => "cd ${project_path}";
   }
 
   # We need these in order to run Composer
@@ -81,5 +82,11 @@ class midcom {
     unless => "/usr/bin/mysql -u${dbuser} -p${dbpass} ${dbname}",
     command => "/usr/bin/mysql -uroot -p -e \"create database ${dbname}; grant all on ${dbname}.* to ${dbuser}@localhost identified by '${dbpass}';\"",
     require => Service['mysql']
+  }
+
+  # Set up Midgard2 config
+  file { "${project_path}/config/midgard2.ini":
+    source => 'puppet:///modules/midcom/midgard2.ini',
+    require => Package['php5-midgard2']
   }
 }

@@ -1,6 +1,0 @@
-<VirtualHost *:80>
-  DocumentRoot /midcom/web
-  <Directory /midcom/web>
-    AllowOverride All
-  </Directory>
-</VirtualHost>

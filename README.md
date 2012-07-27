@@ -3,6 +3,18 @@ midcom-project-template
 
 (Experimental) Template for setting up MidCOM-based projects.
 
+## Where is everything?
+
+The MidCOM project template follows a file structure designed for both easy bootstrapping of new projects, and for managing existing projects in a version control system.
+
+* `config`: application configuration files, including Midgard2 database setup
+* `var`: volatile application data, like logs and cache
+* `src`: application's own MidCOM components
+* `theme`: application's MidCOM templates
+* `web`: document root for the application, to be used with your web server
+* `setup`: setup and installation tools, including Vagrant and Puppet configuration
+* `vendor`: dependencies including MidCOM and components. Managed by Composer
+
 ## Creating new MidCOM projects
 
 This project template is designed to be used together with the [Composer](http://getcomposer.org/) PHP dependency management tool. You can create new MidCOM projects with:
@@ -24,7 +36,7 @@ This will download the MidCOM project template and set it up together with the d
 
 To set up a Vagrant project, download this project template, and then:
 
-    $ cd vagrant
+    $ cd setup/vagrant
     $ vagrant up
 
 The `up` command will download a Ubuntu 12.04 base image, start it in [VirtualBox](https://www.virtualbox.org/) and then use the [Puppet](http://puppetlabs.com/) configuration management system to set up Midgard2, PHP, Apache, and your MidCOM project.
