@@ -5,6 +5,11 @@ exec { '/usr/bin/apt-get update':
 class { 'midcom':
 }
 
+exec { '/usr/sbin/a2dissite 000-default':
+  require => Package['apache2'],
+  notify => Service['apache2']
+}
+
 exec { 'composer_install':
   command => '/usr/local/bin/composer install',
   cwd => '/midcom',
