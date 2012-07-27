@@ -27,3 +27,12 @@ file { 'midgard_php_config':
   require => Exec['composer_install'],
   notify => Service['apache2']
 }
+
+# FIXME: For now we need a second composer run to get database tables built
+exec { 'composer_install2':
+  command => '/usr/local/bin/composer install',
+  timeout => 0,
+  cwd => '/midcom',
+  environment => 'MIDGARD_ENV_GLOBAL_SHAREDIR=/midcom/config/share',
+  require => Exec['composer_install']
+}
