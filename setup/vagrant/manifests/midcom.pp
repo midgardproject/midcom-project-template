@@ -1,4 +1,5 @@
 exec { '/usr/bin/apt-get update':
+  timeout => 0
 }
 
 class { 'midcom':
