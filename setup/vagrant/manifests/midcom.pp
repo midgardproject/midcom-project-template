@@ -14,7 +14,7 @@ exec { 'composer_install':
   command => '/usr/local/bin/composer install',
   timeout => 0,
   cwd => '/midcom',
-  environment => 'MIDGARD_ENV_GLOBAL_SHAREDIR=/midcom/config/share',
+  environment => ['MIDGARD_ENV_GLOBAL_SHAREDIR=/midcom/config/share', 'COMPOSER_PROCESS_TIMEOUT=4000'],
   require => [
     Exec['download_composer'],
     Package['php5-cli', 'php5-midgard2']
