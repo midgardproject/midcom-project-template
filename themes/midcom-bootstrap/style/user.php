@@ -7,12 +7,12 @@ if ($auth->is_valid_user()) {
       <span class="caret"></span>
     </a>
     <ul class="dropdown-menu">
-      <li><a href="/midcom-logout-">Sign Out</a></li>
+      <li><a href="/midcom-logout-"><?php echo $i18n->get_string('logout', 'midcom'); ?></a></li>
     </ul>
     <?php
 } else {
     ?>
-    <a class="btn" href="/midcom-login-">Sign In</a>
+    <a class="btn" href="/midcom-login-"><?php echo $i18n->get_string('login', 'midcom'); ?></a>
     <?php
 }
 ?>
