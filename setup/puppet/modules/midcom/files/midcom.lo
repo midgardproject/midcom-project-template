@@ -7,7 +7,7 @@
 
   php_admin_value midgard.http 'On'
   php_admin_value midgard.engine 'On'
-  php_admin_value midgard.configuration_file '/midcom/config/midgard2.conf'
+  php_admin_value midgard.configuration_file '/midcom/config/midgard2.ini'
 
   <Directory /midcom/web>
     Options FollowSymLinks
