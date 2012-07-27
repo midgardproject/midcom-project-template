@@ -8,7 +8,7 @@ class midcom {
   $dbname = 'midgard'
 
   # The PHP and Apache environment with Midgard2
-  package { ['php5-cli', 'php5-midgard2', 'apache2', 'libapache2-mod-php5', 'libgda-4.0-mysql']:
+  package { ['php5-cli', 'php5-midgard2', 'apache2', 'libapache2-mod-php5', 'libgda-4.0-mysql', 'php5-memcache', 'php-apc']:
       ensure => latest;
   }
 
@@ -88,6 +88,11 @@ class midcom {
     enable => true,
     ensure => running,
     require => Package['mysql-server']
+  }
+
+  # Some extra stuff needed by MidCOM
+  package { ['imagemagick', 'rcs', 'memcached']:
+    ensure => latest
   }
 
   exec { 'create_database':
