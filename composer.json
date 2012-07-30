@@ -1,5 +1,5 @@
 {
-    "name": "openpsa/midcom-project-template",
+    "name": "midgard/midcom-project-template",
     "repositories": [
         {
             "type": "pear",
@@ -16,7 +16,7 @@
     ],
     "minimum-stability": "dev",
     "require": {
-        "openpsa/midcom": "dev-master"
+        "midgard/midcom": "dev-master"
     },
     "scripts": {
         "post-install-cmd": [

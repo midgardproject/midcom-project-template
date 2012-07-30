@@ -1,13 +1,13 @@
 midcom-project-template
 ========================
 
-(Experimental) Template for setting up MidCOM-based projects.
+(Experimental) Template for setting up [MidCOM](http://midgard-project.org/midcom/)-based projects.
 
 ## Where is everything?
 
 The MidCOM project template follows a file structure designed for both easy bootstrapping of new projects, and for managing existing projects in a version control system.
 
-* `config`: application configuration files, including Midgard2 database setup
+* `config`: application configuration files, including [Midgard2](http://midgard-project.org/midgard2/) database setup
 * `var`: volatile application data, like logs and cache
 * `src`: application's own MidCOM components
 * `theme`: application's MidCOM templates
@@ -17,11 +17,13 @@ The MidCOM project template follows a file structure designed for both easy boot
 
 ## Creating new MidCOM projects
 
-This project template is designed to be used together with the [Composer](http://getcomposer.org/) PHP dependency management tool. You can create new MidCOM projects with:
+This project template is designed to be used together with the [Composer](http://getcomposer.org/) PHP dependency management tool. You can create new MidCOM projects on your current machine with:
 
     $ php composer.phar create-project midgard/midcom-project-template myproject
 
 This will download the MidCOM project template and set it up together with the dependencies. This new project will be set up in the `myproject` directory.
+
+**Note**: Even though Midgard2 supports multiple relational databases, the current setup scripts are written for MySQL only.
 
 ## Creating development VMs with Vagrant
 
