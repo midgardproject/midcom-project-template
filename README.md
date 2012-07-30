@@ -1,13 +1,13 @@
 midcom-project-template
 ========================
 
-(Experimental) Template for setting up MidCOM-based projects.
+(Experimental) Template for setting up [MidCOM](http://midgard-project.org/midcom/)-based projects.
 
 ## Where is everything?
 
 The MidCOM project template follows a file structure designed for both easy bootstrapping of new projects, and for managing existing projects in a version control system.
 
-* `config`: application configuration files, including Midgard2 database setup
+* `config`: application configuration files, including [Midgard2](http://midgard-project.org/midgard2/) database setup
 * `var`: volatile application data, like logs and cache
 * `src`: application's own MidCOM components
 * `theme`: application's MidCOM templates
