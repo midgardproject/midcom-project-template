@@ -23,7 +23,7 @@ exec { 'composer_install':
 
 file { 'midgard_php_config':
   path => '/etc/php5/conf.d/midgard2.ini',
-  source => 'puppet:///modules/midcom/midgard2.php.ini',
+  source => 'puppet:///modules/midcom/midgard2.ini',
   require => Exec['composer_install'],
   notify => Service['apache2']
 }

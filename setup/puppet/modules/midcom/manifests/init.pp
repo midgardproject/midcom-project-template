@@ -104,7 +104,7 @@ class midcom {
   # Set up Midgard2 config
   file { 'midgard_config':
     path => "/etc/midgard2/conf.d/midgard2.conf",
-    source => 'puppet:///modules/midcom/midgard2.ini',
+    source => 'puppet:///modules/midcom/midgard2.conf',
     require => Package['php5-midgard2']
   }
 
