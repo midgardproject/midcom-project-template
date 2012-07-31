@@ -103,37 +103,11 @@ class midcom {
 
   # Set up Midgard2 config
   file { 'midgard_config':
-    path => "${project_path}/config/midgard2.ini",
-    source => 'puppet:///modules/midcom/midgard2.ini',
+    path => "/etc/midgard2/conf.d/midgard2.conf",
+    source => 'puppet:///modules/midcom/midgard2.conf',
     require => Package['php5-midgard2']
-  }
-
-  # Copy Midgard2 schema dir
-  file { 'copy_sharedir':
-    path => "${project_path}/config/share",
-    owner => 'vagrant',
-    group => 'vagrant',
-    ensure => directory,
-    recurse => true,
-    source => '/usr/share/midgard2',
-    require => Package['php5-midgard2']
-  }
-
-  # Remove old Midgard2 schema dir and replace with symlink
-  file { '/usr/share/midgard2':
-    ensure => link,
-    target => "${project_path}/config/share",
-    require => File['copy_sharedir'],
-    force => true
   }
 
   # Remove unnecessary example config
   tidy { '/etc/midgard2/conf.d/midgard.conf.example': }
-
-  # Link Midgard2 config to /etc
-  file { '/etc/midgard2/conf.d/midgard2.conf':
-    ensure => link,
-    target => "${project_path}/config/midgard2.ini",
-    require => File['midgard_config']
-  }
 }
