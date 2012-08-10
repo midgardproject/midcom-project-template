@@ -71,7 +71,7 @@ class bootstrap
         }
         else
         {
-            echo '<p>Save this to <code>' . $this->_basedir . "config.inc.php</code:</p>\n";
+            echo '<p>Save this to <code>' . $this->_basedir . "config.inc.php</code>:</p>\n";
             echo '<pre>';
             echo htmlentities($config);
             echo '</pre>';
