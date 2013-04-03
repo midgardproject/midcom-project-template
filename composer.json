@@ -4,14 +4,6 @@
         {
             "type": "pear",
             "url": "http://pear.php.net"
-        },
-        {
-            "type": "pear",
-            "url": "htmlpurifier.org"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/flack/openpsa"
         }
     ],
     "minimum-stability": "dev",
