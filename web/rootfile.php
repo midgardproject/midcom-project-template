@@ -9,6 +9,10 @@ header('Content-Type: text/html; charset=utf-8');
 
 $GLOBALS['midcom_config_local'] = array();
 $GLOBALS['midcom_config_local']['person_class'] = 'openpsa_person';
+$GLOBALS['midcom_config_local']['midcom_config_basedir'] = $basedir . 'config';
+$GLOBALS['midcom_config_local']['log_filename'] = $basedir . 'var/log/midcom.log';
+$GLOBALS['midcom_config_local']['cache_base_directory'] = $basedir . "var/cache/midcom/";
+$GLOBALS['midcom_config_local']['midcom_services_rcs_root'] = $basedir . "var/rcs";
 
 //This file you have to provide
 if (!file_exists($basedir . 'config/midcom.inc.php'))
