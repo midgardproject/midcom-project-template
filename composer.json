@@ -8,17 +8,16 @@
     ],
     "minimum-stability": "dev",
     "require": {
-        "midgard/midcom": "dev-master"
+        "midgard/midcom": "dev-master",
+        "openpsa/installer": "dev-master"
     },
     "scripts": {
         "post-install-cmd": [
-            "openpsa\\setup\\installer::setup_project",
-            "openpsa\\setup\\installer::install_statics",
-            "openpsa\\setup\\installer::install_schemas"
+            "openpsa\\installer\\installer::prepare_db",
+            "openpsa\\installer\\installer::setup_root_package"
         ],
         "post-update-cmd": [
-            "openpsa\\setup\\installer::install_statics",
-            "openpsa\\setup\\installer::install_schemas"
+            "openpsa\\installer\\installer::setup_root_package"
         ]
     },
     "extra": {
