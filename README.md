@@ -23,7 +23,12 @@ This project template is designed to be used together with the [Composer](http:/
 
 This will download the MidCOM project template and set it up together with the dependencies. This new project will be set up in the `myproject` directory.
 
-**Note**: Even though Midgard2 supports multiple relational databases, the current setup scripts are written for MySQL only.
+To set up a new database, use [openpsa/installer](https://github.com/flack/openpsa-installer)'s ``midgard2:setup`` command:
+
+    $ ./vendor/bin/openpsa-installer midgard2:setup
+
+
+**Note**: Even though Midgard2 supports multiple relational databases, the current setup scripts only support MySQL and SQLite.
 
 ## Creating development VMs with Vagrant
 
