@@ -1,11 +1,5 @@
 {
     "name": "midgard/midcom-project-template",
-    "repositories": [
-        {
-            "type": "pear",
-            "url": "http://pear.php.net"
-        }
-    ],
     "minimum-stability": "dev",
     "require": {
         "midgard/midcom": "dev-master",
